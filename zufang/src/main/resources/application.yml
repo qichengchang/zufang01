@@ -1,0 +1,29 @@
+server:
+  port: 10099
+  servlet:
+    context-path: /
+
+spring:
+  datasource:
+    hikari:
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/zufang?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: root
+  servlet:
+    multipart:
+      maxFileSize: -1
+      maxRequestSize: -1
+mybatis-plus:
+  #实体类所做包
+  type-aliases-package: com.sunrui.zufang.bean
+  #  #mapper.xml所在位置
+  mapper-locations: classpath:mapper/*.xml
+
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/static/
+logging:
+  level:
+    com.sunrui: DEBUG
